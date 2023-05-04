@@ -15,5 +15,3 @@ c) As funcionalidades que deverá disponibilizar aos vários utilizadores?
 Acessos:
 Administrador - Todas as funcionalidade do Utilizador mais alteração do preço energético.
 Utilizador - Consulta/alterar dados pessoais, alteração método de pagamento, consulta dos consumos energéticos, inserção de consumos energéticos.
-
-2)
