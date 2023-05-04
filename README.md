@@ -7,8 +7,8 @@ No final o utilizador terá acesso ao consumo médio de energia.
 
 b) Os diferentes tipos de utilizadores da aplicação (mínimo 2 tipos)?
 
-Administrador;
-Utilizador.
+Administrador:
+Utilizador:
 
 c) As funcionalidades que deverá disponibilizar aos vários utilizadores?
 
