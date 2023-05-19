@@ -1,5 +1,5 @@
 # P21_GDENERGIA
-1)
+
 a) Os objetivos da sua aplicação?
 
 O objetivo da aplicação é realizar toda a gestão energética consumida por cada cliente. Cada cliente terá toda a sua informação numa base de dados onde poderá essa ser consultada e alterada, sendo essa nome, morada, código de postal, número de telemóvel, número de contribuinte e dados de pagamento.
