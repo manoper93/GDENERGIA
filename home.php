@@ -1,1 +1,0 @@
-echo “<?php phpinfo(); ?>”  >  teste.php
