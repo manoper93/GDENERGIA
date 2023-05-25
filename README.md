@@ -16,6 +16,7 @@ Acessos:
 Administrador - Todas as funcionalidade do Utilizador mais alteração do preço energético.
 Utilizador - Consulta/alterar dados pessoais, alteração método de pagamento, consulta dos consumos energéticos, inserção de consumos energéticos.
 
+
 importar db:
  C:\xampp\mysql\bin\mysql -u root nome_do_banco_de_dados < caminho_para_arquivo.sql
 
