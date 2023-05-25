@@ -215,7 +215,6 @@ button:focus {
   z-index: 100;
 }
 .cardList__btn.btn--left {
-
   left: -15%;
 }
 .cardList__btn.btn--right {
