@@ -206,7 +206,7 @@ button:focus {
   height: auto;
 }
 .cardList__btn {
-  --btn-size: 35px;
+  --btn-size: 40px;
   width: var(--btn-size);
   height: var(--btn-size);
   position: absolute;
@@ -215,10 +215,10 @@ button:focus {
   z-index: 100;
 }
 .cardList__btn.btn--left {
-  left: -5%;
+  left: -10%;
 }
 .cardList__btn.btn--right {
-  right: -5%;
+  right: -10%;
 }
 .cardList__btn .icon {
   width: 100%;
