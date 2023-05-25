@@ -206,11 +206,7 @@ button:focus {
   height: auto;
 }
 .cardList__btn {
-<<<<<<< HEAD
-  --btn-size: 40px;
-=======
   --btn-size: 35px;
->>>>>>> Miguel-Santos
   width: var(--btn-size);
   height: var(--btn-size);
   position: absolute;
@@ -219,17 +215,10 @@ button:focus {
   z-index: 100;
 }
 .cardList__btn.btn--left {
-<<<<<<< HEAD
-  left: -10%;
-}
-.cardList__btn.btn--right {
-  right: -10%;
-=======
   left: -5%;
 }
 .cardList__btn.btn--right {
   right: -5%;
->>>>>>> Miguel-Santos
 }
 .cardList__btn .icon {
   width: 100%;
