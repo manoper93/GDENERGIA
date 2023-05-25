@@ -1,0 +1,19 @@
+.containerbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .square {
+    width: 500px;
+    height: 500px;
+    background-color: #cccccc4b;
+    margin: 50px;
+    border-radius: 7%;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
