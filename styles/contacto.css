@@ -1,28 +1,23 @@
-.containerbox {
+.contain-contact{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   align-content: center;
-    
-  }
-  body {
-    background-image: url('images/contact_us.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
-  }
-  .square {
-    width: 250px;
-    height: 200px;
-    background-color: #cccccc7e;
-    margin: 10px;
-    border-radius: 10%;
-    text-align: center;
-   
-  }
-
+}
  
+.square-contact {
+  width: 300px;
+  height: 200px;
+  background-color: #cccccc4b;
+  margin: 50px;
+  border-radius: 20px;
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
   
