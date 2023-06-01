@@ -1,61 +1,179 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WATT | Energia</title>
+    <link rel="icon" href="images/WATT.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/energia.css" />
+    <link rel="stylesheet" href="styles/Login.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<title>WATT | Eletricidade</title>
-	<link rel="icon" href="images/WATT.png">
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
-	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
-	<link rel="stylesheet" href="styles/style.css">
-	<link rel="stylesheet" href="styles/areacliente.css">
-	<link rel="stylesheet" href="styles/eletricidade.css">
-</head>
+  <body>
+    <div class="app">
+      <!-- Backgroung -->
+      <div class="app__bg">
+        <div class="app__bg__image current--image">
+          <img src="images/casa sustentável.jpg" alt="" />
+        </div>
+      </div>
 
-<body>
-	<div class="app">
+      <!-- Nav -->
+      <nav id="nav">
+        <div style="padding-left: 50px">
+          <a href="index.html">
+            <img src="images/Logotipo transparente.png" alt="" width="180" />
+          </a>
+        </div>
 
-		<!-- Backgroung -->
-		<div class="app__bg">
-			<div class="app__bg__image current--image">
-				<img src="images/casa sustentável.jpg" alt="" />
-			</div>
-		</div>
+        <div style="padding-right: 50px">
+          <input type="checkbox" id="show" />
+          <label
+            for="show"
+            class="show-btn"
+            id="loginText"
+            onclick="showOrHideLogin()"
+            >Login</label
+          >
+        </div>
+      </nav>
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<!-- <li class="current"><a href="index.html">Início</a></li> -->
-				<li><a href="carrinho.html">Carrinho</a></li>
-				<li><a href="">Area Cliente</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
-			</ul>
-		</nav>
+      <!-- LOGIN CONTAINER -->
 
-		<a href="index.html">
-			<img src="images/Logotipo transparente.png" alt=""
-				style="max-width: 150px; max-height: 100px; position: absolute; top: 22px; left: 110px;" />
-		</a>
+      <div class="login-container" style="display: none">
+        <div class="content">
+          <div class="section">
+            <div class="row full-height justify-content-center">
+              <div class="col-12 text-center align-self-center py-5">
+                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                  <h6 class="mb-0 pb-3">
+                    <span>Log In </span><span>Sign Up</span>
+                  </h6>
+                  <input
+                    class="checkbox"
+                    type="checkbox"
+                    id="reg-log"
+                    name="reg-log"
+                  />
+                  <label for="reg-log"></label>
+                  <div class="card-3d-wrap mx-auto">
+                    <div class="card-3d-wrapper">
+                      <div class="card-front">
+                        <div class="center-wrap">
+                          <div class="section text-center">
+                            <form id="loginForm">
+                              <h4 class="mb-4 pb-3">Log In</h4>
+                              <div class="form-group">
+                                <input
+                                  type="email"
+                                  name="logemail"
+                                  class="form-style"
+                                  placeholder="Your Email"
+                                  id="logemail"
+                                  autocomplete="off"
+                                  required
+                                />
+                                <i class="input-icon uil uil-at"></i>
+                              </div>
+                              <div class="form-group mt-2">
+                                <input
+                                  type="password"
+                                  name="logpass"
+                                  class="form-style"
+                                  placeholder="Your Password"
+                                  id="logpass"
+                                  autocomplete="off"
+                                  required
+                                />
+                                <i class="input-icon uil uil-lock-alt"></i>
+                              </div>
+                              <button class="btn-login mt-4">submit</button>
+                              <p class="mb-0 mt-4 text-center">
+                                <a href="#0" class="link"
+                                  >Forgot your password?</a
+                                >
+                              </p>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-back">
+                        <div class="center-wrap">
+                          <div class="section text-center">
+                            <h4 class="mb-4 pb-3">Sign Up</h4>
+                            <div class="form-group">
+                              <input
+                                type="text"
+                                name="logname"
+                                class="form-style"
+                                placeholder="Your Full Name"
+                                id="logname"
+                                autocomplete="off"
+                              />
+                              <i class="input-icon uil uil-user"></i>
+                            </div>
+                            <div class="form-group mt-2">
+                              <input
+                                type="email"
+                                name="logemail"
+                                class="form-style"
+                                placeholder="Your Email"
+                                id="logemail"
+                                autocomplete="off"
+                              />
+                              <i class="input-icon uil uil-at"></i>
+                            </div>
+                            <div class="form-group mt-2">
+                              <input
+                                type="password"
+                                name="logpass"
+                                class="form-style"
+                                placeholder="Your Password"
+                                id="logpass"
+                                autocomplete="off"
+                              />
+                              <i class="input-icon uil uil-lock-alt"></i>
+                            </div>
+                            <a href="#" class="btn-login mt-4">submit</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- <div class="containerbox">
+        <div class="square">Consumosssss</div>
+        <div class="square">Tarifas</div>
+      </div> -->
 
-		<!-- login botao -->
-		<input type="checkbox" id="show">
-		<label for="show" class="show-btn">Login</label>
-
-		<div class="container">
-			<h1>Bem Vindo</h1>
-			<form action="php/login.php" method="post">
-				<label>Numero Cliente</label>
-				<input type="text" name="numero">
-				<label>Password</label>
-				<input type="password" name="password">
-				<button>Login</button>
-				<div class="nolink">Não inscrito? <a class="link" href="#">Inscreva-se Aqui</a></div>
-			</form>
-		</div>
-
-		<div class="containerbox">
-			<div class="square">Consumosssss</div>
-			<div class="square">Tarifas</div>
-		</div>
-</body>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/login_popup.js"></script>
+  </body>
+</html>
