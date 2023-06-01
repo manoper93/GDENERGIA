@@ -1,17 +1,28 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.containerbox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+    
   }
-
+  body {
+    background-image: url('images/contact_us.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+  }
   .square {
     width: 250px;
     height: 200px;
     background-color: #cccccc7e;
-    margin: 50px;
+    margin: 10px;
     border-radius: 10%;
     text-align: center;
+   
   }
+
+ 
 
   
