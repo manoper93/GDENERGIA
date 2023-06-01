@@ -39,7 +39,6 @@ h6 span {
   position: relative;
   width: 100%;
   display: block;
-
 }
 .full-height {
   min-height: 50vh;
@@ -70,7 +69,7 @@ h6 span {
   height: 36px;
   border-radius: 50%;
   color: #ffeba7;
-  background-color: #102770;
+  background-color: #1f2029;
   font-family: "unicons";
   content: "\eb4f";
   z-index: 20;
@@ -86,9 +85,9 @@ h6 span {
 }
 
 .card-3d-wrap {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   height: 50vh;
   position: relative;
   width: 440px;
@@ -113,11 +112,7 @@ h6 span {
 .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2a2b38;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: 300%;
+  background-color: rgba(146, 146, 146, 1);
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
@@ -232,7 +227,7 @@ h6 span {
   transition: all 200ms linear;
 }
 
-.btn {
+.btn-login {
   margin-top: 5%;
   border-radius: 4px;
   height: 44px;
@@ -261,13 +256,13 @@ h6 span {
   color: #102770;
   box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
 }
-.btn:active,
-.btn:focus {
+.btn-login:active,
+.btn-login:focus {
   background-color: #102770;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
 }
-.btn:hover {
+.btn-login:hover {
   background-color: #102770;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
@@ -285,4 +280,28 @@ h6 span {
   height: 26px;
   width: auto;
   display: block;
+}
+
+.login-container {
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  padding: 20px;
+  position: absolute;
+  z-index: 50;
+  display: flex;
+}
+
+.content .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
