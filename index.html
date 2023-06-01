@@ -11,6 +11,67 @@
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/areacliente.css">
 	<link rel="stylesheet" href="styles/Login.css">
+
+	<script>
+		$(document).ready(function() {
+		  $('#login-form').submit(function(e) {
+			e.preventDefault(); // Impede o envio padrão do formulário
+	
+			var username = $('#logemail').val();
+			var password = $('#logpass').val();
+	
+			$.ajax({
+			  type: 'POST',
+			  url: 'php/login.php',
+			  data: {
+				username: username,
+				password: password
+			  },
+			  success: function(response) {
+				if (response == 'success') {
+				  // Login bem-sucedido
+				  alert('Login bem-sucedido');
+				  // Faça o redirecionamento ou execute ações adicionais aqui
+				} else {
+				  // Login falhou
+				  alert('Login falhou');
+				}
+			  }
+			});
+		  });
+		});
+	  </script>
+
+<script>
+	$(document).ready(function() {
+	  $('#registar-form').submit(function(e) {
+		e.preventDefault(); // Impede o envio padrão do formulário
+
+		var username = $('#username').val();
+		var password = $('#password').val();
+
+		$.ajax({
+		  type: 'POST',
+		  url: 'php/registar.php',
+		  data: {
+			username: username,
+			password: password
+		  },
+		  success: function(response) {
+			if (response == 'success') {
+			  // Login bem-sucedido
+			  alert('Login bem-sucedido');
+			  // Faça o redirecionamento ou execute ações adicionais aqui
+			} else {
+			  // Login falhou
+			  alert('Login falhou');
+			}
+		  }
+		});
+	  });
+	});
+  </script>
+
 </head>
 
 <body>
@@ -28,7 +89,7 @@
 				<li><a href="contacto.html">Contacto</a></li>
 			</ul>
 		</nav>
-    
+
 		<input type="checkbox" id="show">
 		<label for="show" class="show-btn">Login</label>
 
@@ -46,139 +107,137 @@
 			<!-- partial:index.partial.html -->
 			<div class="section">
 				<!-- <div class="container"> -->
-					<div class="row full-height justify-content-center">
-						<div class="col-12 text-center align-self-center py-5">
-							<div class="section pb-5 pt-5 pt-sm-2 text-center">
-								<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
-								<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-								<label for="reg-log"></label>
-									<div class="card-3d-wrap mx-auto">
-										<div class="card-3d-wrapper">
-											<div class="card-front">
-												<div class="center-wrap">
-													<div class="section text-center">
-														<h4 class="mb-4 pb-3">Log In</h4>
-														<div class="form-group">
-															<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-															<i class="input-icon uil uil-at"></i>
-														</div>
-														<div class="form-group mt-2">
-															<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-															<i class="input-icon uil uil-lock-alt"></i>
-														</div>
-														<a href="#" class="btn mt-4">submit</a>
-														<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
-																password?</a></p>
+				<div class="row full-height justify-content-center">
+					<div class="col-12 text-center align-self-center py-5">
+						<div class="section pb-5 pt-5 pt-sm-2 text-center">
+							<h6 class="c"><span>Login </span><span>Registar</span></h6>
+							<input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+							<label for="reg-log"></label>
+							<div class="card-3d-wrap mx-auto">
+								<div class="card-3d-wrapper">
+									<div class="card-front">
+										<form action="php/login.php" method="POST" id="login-form">
+											<div class="center-wrap">
+												<div class="section text-center">
+													<h4 class="mb-4 pb-3">Log In</h4>
+													<div class="form-group">
+														<input type="text" name="logemail" class="form-style"
+															placeholder="Seu Email" id="logemail" autocomplete="off">
 													</div>
-												</div>
-											</div>
-											<div class="card-back">
-												<div class="center-wrap">
-													<div class="section text-center">
-														<h4 class="mb-4 pb-3">Sign Up</h4>
-														<div class="form-group">
-															<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
-															<i class="input-icon uil uil-user"></i>
-														</div>
-														<div class="form-group mt-2">
-															<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-															<i class="input-icon uil uil-at"></i>
-														</div>
-														<div class="form-group mt-2">
-															<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-															<i class="input-icon uil uil-lock-alt"></i>
-														</div>
-														<a href="#" class="btn mt-4">submit</a>
+													<div class="form-group mt-2">
+														<input type="password" name="logpass" class="form-style"
+															placeholder="Sua Password" id="logpass" autocomplete="off">
 													</div>
+													<input class="btn mt-4" type="submit" value="Login">
 												</div>
+										</form>
+									</div>
+								</div>
+								<div class="card-back">
+									<form action="php/registar.php" method="POST" id="registar-form">
+										<div class="center-wrap">
+											<div class="section text-center">
+												<h4 class="mb-4 pb-3">Sign Up</h4>
+												<div class="form-group">
+													<input type="text" name="logemail" class="form-style"
+														placeholder="Email" id="logemail" autocomplete="off">
+												</div>
+												<div class="form-group mt-2">
+													<input type="password" name="logpass" class="form-style"
+														placeholder="Password" id="logpass" autocomplete="off">
+												</div>
+												<input class="btn mt-4" type="submit" value="Registar">
 											</div>
 										</div>
-									</div>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-				<!-- </div> -->
+				</div>
 			</div>
 		</div>
+		<!-- </div> -->
+	</div>
+	</div>
 
-		<div class="cardList">
-			<button class="cardList__btn btn btn--left">
-				<div class="icon">
-					<svg>
-						<use xlink:href="#arrow-left"></use>
-					</svg>
-				</div>
-			</button>
+	<div class="cardList">
+		<button class="cardList__btn btn btn--left">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-left"></use>
+				</svg>
+			</div>
+		</button>
 
-			<div class="cards__wrapper">
-				<div class="card current--card">
-					<div class="card__image">
-						<a href="Mobilidade.html">
-							<img src="images/Mobile charge.jpg" alt="" />
-						</a>
-					</div>
-				</div>
-
-				<div class="card next--card">
-					<div class="card__image">
-						<a href="Energia.html">
-							<img src="images/Energia verde v1.png" alt="" />
-						</a>
-					</div>
-				</div>
-
-				<div class="card previous--card">
-					<div class="card__image">
-						<a href="Eletricidade.html">
-							<img src="images/casa sustentável.jpg" alt="" />
-						</a>
-					</div>
+		<div class="cards__wrapper">
+			<div class="card current--card">
+				<div class="card__image">
+					<a href="Mobilidade.html">
+						<img src="images/Mobile charge.jpg" alt="" />
+					</a>
 				</div>
 			</div>
 
-			<button class="cardList__btn btn btn--right">
-				<div class="icon">
-					<svg>
-						<use xlink:href="#arrow-right"></use>
-					</svg>
+			<div class="card next--card">
+				<div class="card__image">
+					<a href="Energia.html">
+						<img src="images/Energia verde v1.png" alt="" />
+					</a>
 				</div>
-			</button>
-		</div>
+			</div>
 
-		<div class="infoList">
-			<div class="info__wrapper">
-				<div class="info current--info">
-					<h1 class="text name">Mobilidade</h1>
-					<h4 class="text location">Verde</h4>
-					<p class="text description">Conheça as nossas soluções</p>
-				</div>
-
-				<div class="info next--info">
-					<h1 class="text name">Energia</h1>
-					<h4 class="text location">Verde</h4>
-					<p class="text description">A Energia do futuro</p>
-				</div>
-
-				<div class="info previous--info">
-					<h1 class="text name">Eletricidade</h1>
-					<h4 class="text location">Verde</h4>
-					<p class="text description">Let your dreams come true</p>
+			<div class="card previous--card">
+				<div class="card__image">
+					<a href="Eletricidade.html">
+						<img src="images/casa sustentável.jpg" alt="" />
+					</a>
 				</div>
 			</div>
 		</div>
 
-		<div class="app__bg">
-			<div class="app__bg__image current--image">
-				<img src="images/Mobile charge.jpg" alt="" />
+		<button class="cardList__btn btn btn--right">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-right"></use>
+				</svg>
 			</div>
-			<div class="app__bg__image next--image">
-				<img src="images/Energia verde v1.png" alt="" />
+		</button>
+	</div>
+
+	<div class="infoList">
+		<div class="info__wrapper">
+			<div class="info current--info">
+				<h1 class="text name">Mobilidade</h1>
+				<h4 class="text location">Verde</h4>
+				<p class="text description">Conheça as nossas soluções</p>
 			</div>
-			<div class="app__bg__image previous--image">
-				<img src="images/casa sustentável.jpg" alt="" />
+
+			<div class="info next--info">
+				<h1 class="text name">Energia</h1>
+				<h4 class="text location">Verde</h4>
+				<p class="text description">A Energia do futuro</p>
+			</div>
+
+			<div class="info previous--info">
+				<h1 class="text name">Eletricidade</h1>
+				<h4 class="text location">Verde</h4>
+				<p class="text description">Let your dreams come true</p>
 			</div>
 		</div>
+	</div>
+
+	<div class="app__bg">
+		<div class="app__bg__image current--image">
+			<img src="images/Mobile charge.jpg" alt="" />
+		</div>
+		<div class="app__bg__image next--image">
+			<img src="images/Energia verde v1.png" alt="" />
+		</div>
+		<div class="app__bg__image previous--image">
+			<img src="images/casa sustentável.jpg" alt="" />
+		</div>
+	</div>
 	</div>
 
 	<div class="loading__wrapper">
