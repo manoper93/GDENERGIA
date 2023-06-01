@@ -1,288 +1,258 @@
 <!DOCTYPE html>
 
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>WATT | Energia</title>
-    <link rel="icon" href="images/WATT.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'
-    />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
-    />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/energia.css" />
-    <link rel="stylesheet" href="styles/Login.css" />
-  </head>
 
-  <body>
-    <div class="app">
-      <!-- Nav -->
-      <nav id="nav">
-        <div style="padding-left: 50px">
-          <a href="index.html">
-            <img src="images/Logotipo transparente.png" alt="" width="180" />
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>WATT | Energia</title>
+  <link rel="icon" href="images/WATT.png" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet' />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/energia.css" />
+  <link rel="stylesheet" href="styles/Login.css" />
 
-        <div style="padding-right: 50px">
-          <input type="checkbox" id="show" />
-          <label
-            for="show"
-            class="show-btn"
-            id="loginText"
-            onclick="showOrHideLogin()"
-            >Login</label
-          >
-        </div>
-      </nav>
+</head>
 
-      <!-- LOGIN CONTAINER -->
+<body>
+  <div class="app">
+    <!-- Nav -->
+    <nav id="nav">
+      <div style="padding-left: 50px">
+        <a href="index.html">
+          <img src="images/Logotipo transparente.png" alt="" width="180" />
+        </a>
+      </div>
 
-      <div class="login-container" style="display: none">
-        <div class="content">
-          <div class="section">
-            <div class="row full-height justify-content-center">
-              <div class="col-12 text-center align-self-center py-5">
-                <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                  <h6 class="mb-0 pb-3">
-                    <span>Log In </span><span>Sign Up</span>
-                  </h6>
-                  <input
-                    class="checkbox"
-                    type="checkbox"
-                    id="reg-log"
-                    name="reg-log"
-                  />
-                  <label for="reg-log"></label>
-                  <div class="card-3d-wrap mx-auto">
-                    <div class="card-3d-wrapper">
-                      <div class="card-front">
-                        <div class="center-wrap">
-                          <div class="section text-center">
-                            <form id="loginForm">
-                              <h4 class="mb-4 pb-3">Log In</h4>
-                              <div class="form-group">
-                                <input
-                                  type="email"
-                                  name="logemail"
-                                  class="form-style"
-                                  placeholder="Your Email"
-                                  id="logemail"
-                                  autocomplete="off"
-                                  required
-                                />
-                                <i class="input-icon uil uil-at"></i>
-                              </div>
-                              <div class="form-group mt-2">
-                                <input
-                                  type="password"
-                                  name="logpass"
-                                  class="form-style"
-                                  placeholder="Your Password"
-                                  id="logpass"
-                                  autocomplete="off"
-                                  required
-                                />
-                                <i class="input-icon uil uil-lock-alt"></i>
-                              </div>
-                              <button class="btn-login mt-4">submit</button>
-                              <p class="mb-0 mt-4 text-center">
-                                <a href="#0" class="link"
-                                  >Forgot your password?</a
-                                >
-                              </p>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-back">
-                        <div class="center-wrap">
-                          <div class="section text-center">
-                            <h4 class="mb-4 pb-3">Sign Up</h4>
+      <div style="padding-right: 50px">
+        <input type="checkbox" id="show" />
+        <label for="show" class="show-btn" id="loginText" onclick="showOrHideLogin()">Login</label>
+      </div>
+    </nav>
+
+    <!-- LOGIN CONTAINER -->
+
+    <div class="login-container" style="display: none">
+      <div class="content">
+        <div class="section">
+          <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+              <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                <h6 class="mb-0 pb-3">
+                  <span>Log In </span><span>Sign Up</span>
+                </h6>
+                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                <label for="reg-log"></label>
+                <div class="card-3d-wrap mx-auto">
+                  <div class="card-3d-wrapper">
+                    <div class="card-front">
+                      <div class="center-wrap" id="resultado">
+
+                        <script>
+                          function buscarDados() {
+                              var formData = new FormData();
+                              formData.append('email', document.getElementById('email').value);
+                              formData.append('senha', document.getElementById('senha').value);
+                  
+                              axios.post('login.php', formData)
+                                  .then(function (response) {
+                                      var resultadoDiv = document.getElementById('resultado');
+                                      resultadoDiv.innerText = JSON.stringify(response.data);
+                                  })
+                                  .catch(function (error) {
+                                      console.error(error);
+                                  });
+                          }
+                      </script>
+
+                        <div class="section text-center">
+                          <form id="loginForm">
+                            <h4 class="mb-4 pb-3">Log In</h4>
                             <div class="form-group">
-                              <input
-                                type="text"
-                                name="logname"
-                                class="form-style"
-                                placeholder="Your Full Name"
-                                id="logname"
-                                autocomplete="off"
-                              />
-                              <i class="input-icon uil uil-user"></i>
-                            </div>
-                            <div class="form-group mt-2">
-                              <input
-                                type="email"
-                                name="logemail"
-                                class="form-style"
-                                placeholder="Your Email"
-                                id="logemail"
-                                autocomplete="off"
-                              />
+                              <input type="email" name="email" class="form-style" placeholder="Your Email"
+                                id="email" autocomplete="off" required />
                               <i class="input-icon uil uil-at"></i>
                             </div>
                             <div class="form-group mt-2">
-                              <input
-                                type="password"
-                                name="logpass"
-                                class="form-style"
-                                placeholder="Your Password"
-                                id="logpass"
-                                autocomplete="off"
-                              />
+                              <input type="password" name="senha" class="form-style" placeholder="Your Password"
+                                id="senha" autocomplete="off" required />
                               <i class="input-icon uil uil-lock-alt"></i>
                             </div>
-                            <a href="#" class="btn-login mt-4">submit</a>
-                          </div>
+                            <button onclick="buscarDados()" class="btn-login mt-4">submit</button>
+                            <p class="mb-0 mt-4 text-center">
+                              <a href="#0" class="link">Forgot your password?</a>
+                            </p>
+                          </form>
                         </div>
                       </div>
+                    </div>
+                    <div class="card-back" id="registroForm">
+
+                      <div class="center-wrap">
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3">Sign Up</h4>
+                          <div class="form-group">
+                            <input type="text" name="nome" class="form-style" placeholder="Your Full Name"
+                              id="nome" autocomplete="off" />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input type="email" name="email" class="form-style" placeholder="Your Email"
+                              id="email" autocomplete="off" />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input type="password" name="senha" class="form-style" placeholder="Your Password"
+                              id="senha" autocomplete="off" />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <button onclick="enviarDados()" type="submit" class="btn-login mt-4">submit</button>
+                        </div>
+                      </div>
+
+                      <script>
+                        document.getElementById('registroForm').addEventListener('submit', function (event) {
+                            event.preventDefault(); // Impede o envio padrão do formulário
+                
+                            var formData = new FormData(this);
+                
+                            axios.post('registar.php', formData)
+                                .then(function (response) {
+                                    var mensagemDiv = document.getElementById('mensagem');
+                                    mensagemDiv.innerText = response.data;
+                                })
+                                .catch(function (error) {
+                                    console.error(error);
+                                });
+                        });
+                    </script>
+
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- </div> -->
         </div>
+        <!-- </div> -->
       </div>
-
-      <div class="cardList">
-        <button class="cardList__btn btn btn--left">
-          <div class="icon">
-            <svg>
-              <use xlink:href="#arrow-left"></use>
-            </svg>
-          </div>
-        </button>
-
-        <div class="cards__wrapper">
-          <div class="card current--card">
-            <div class="card__image">
-              <a href="Mobilidade.html">
-                <img src="images/Mobile charge.jpg" alt="" />
-              </a>
-            </div>
-          </div>
-
-          <div class="card next--card">
-            <div class="card__image">
-              <a href="Energia.html">
-                <img src="images/Energia verde v1.png" alt="" />
-              </a>
-            </div>
-          </div>
-
-          <div class="card previous--card">
-            <div class="card__image">
-              <a href="Eletricidade.html">
-                <img src="images/casa sustentável.jpg" alt="" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <button class="cardList__btn btn btn--right">
-          <div class="icon">
-            <svg>
-              <use xlink:href="#arrow-right"></use>
-            </svg>
-          </div>
-        </button>
-      </div>
-
-      <div class="infoList">
-        <div class="info__wrapper">
-          <div class="info current--info">
-            <h1 class="text name">Mobilidade</h1>
-            <h4 class="text location">Verde</h4>
-            <p class="text description">Conheça as nossas soluções</p>
-          </div>
-
-          <div class="info next--info">
-            <h1 class="text name">Energia</h1>
-            <h4 class="text location">Verde</h4>
-            <p class="text description">A Energia do futuro</p>
-          </div>
-
-          <div class="info previous--info">
-            <h1 class="text name">Eletricidade</h1>
-            <h4 class="text location">Verde</h4>
-            <p class="text description">Let your dreams come true</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="app__bg">
-        <div class="app__bg__image current--image">
-          <img src="images/Mobile charge.jpg" alt="" />
-        </div>
-        <div class="app__bg__image next--image">
-          <img src="images/Energia verde v1.png" alt="" />
-        </div>
-        <div class="app__bg__image previous--image">
-          <img src="images/casa sustentável.jpg" alt="" />
-        </div>
-      </div>
-
-      <div class="loading__wrapper">
-        <div class="loader--text">Loading...</div>
-        <div class="loader">
-          <span></span>
-        </div>
-      </div>
-
-      <svg class="icons" style="display: none">
-        <symbol
-          id="arrow-left"
-          xmlns="https://www.w3.org/TR/SVG2/"
-          viewBox="0 0 512 512"
-        >
-          <polyline
-            points="328 112 184 256 328 400"
-            style="
-              fill: none;
-              stroke: #fff;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              stroke-width: 48px;
-            "
-          />
-        </symbol>
-        <symbol
-          id="arrow-right"
-          xmlns="https://www.w3.org/TR/SVG2/"
-          viewBox="0 0 512 512"
-        >
-          <polyline
-            points="184 112 328 256 184 400"
-            style="
-              fill: none;
-              stroke: #fff;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              stroke-width: 48px;
-            "
-          />
-        </symbol>
-      </svg>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/login_popup.js"></script>
-  </body>
+    <div class="cardList">
+      <button class="cardList__btn btn btn--left">
+        <div class="icon">
+          <svg>
+            <use xlink:href="#arrow-left"></use>
+          </svg>
+        </div>
+      </button>
+
+      <div class="cards__wrapper">
+        <div class="card current--card">
+          <div class="card__image">
+            <a href="Mobilidade.html">
+              <img src="images/Mobile charge.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="card next--card">
+          <div class="card__image">
+            <a href="Energia.html">
+              <img src="images/Energia verde v1.png" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="card previous--card">
+          <div class="card__image">
+            <a href="Eletricidade.html">
+              <img src="images/casa sustentável.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button class="cardList__btn btn btn--right">
+        <div class="icon">
+          <svg>
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </div>
+      </button>
+    </div>
+
+    <div class="infoList">
+      <div class="info__wrapper">
+        <div class="info current--info">
+          <h1 class="text name">Mobilidade</h1>
+          <h4 class="text location">Verde</h4>
+          <p class="text description">Conheça as nossas soluções</p>
+        </div>
+
+        <div class="info next--info">
+          <h1 class="text name">Energia</h1>
+          <h4 class="text location">Verde</h4>
+          <p class="text description">A Energia do futuro</p>
+        </div>
+
+        <div class="info previous--info">
+          <h1 class="text name">Eletricidade</h1>
+          <h4 class="text location">Verde</h4>
+          <p class="text description">Let your dreams come true</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="app__bg">
+      <div class="app__bg__image current--image">
+        <img src="images/Mobile charge.jpg" alt="" />
+      </div>
+      <div class="app__bg__image next--image">
+        <img src="images/Energia verde v1.png" alt="" />
+      </div>
+      <div class="app__bg__image previous--image">
+        <img src="images/casa sustentável.jpg" alt="" />
+      </div>
+    </div>
+
+    <div class="loading__wrapper">
+      <div class="loader--text">Loading...</div>
+      <div class="loader">
+        <span></span>
+      </div>
+    </div>
+
+    <svg class="icons" style="display: none">
+      <symbol id="arrow-left" xmlns="https://www.w3.org/TR/SVG2/" viewBox="0 0 512 512">
+        <polyline points="328 112 184 256 328 400" style="
+              fill: none;
+              stroke: #fff;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 48px;
+            " />
+      </symbol>
+      <symbol id="arrow-right" xmlns="https://www.w3.org/TR/SVG2/" viewBox="0 0 512 512">
+        <polyline points="184 112 328 256 184 400" style="
+              fill: none;
+              stroke: #fff;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 48px;
+            " />
+      </symbol>
+    </svg>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/login_popup.js"></script>
+</body>
+
 </html>

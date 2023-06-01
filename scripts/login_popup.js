@@ -21,9 +21,9 @@ var showOrHideLogin = () => {
 // REF para o form
 const loginForm = document.getElementById("loginForm");
 // ref para input email do login
-const logemail = document.getElementById("logemail");
+const logemail = document.getElementById("email");
 // ref para input password do login
-const logpass = document.getElementById("logpass");
+const logpass = document.getElementById("senha");
 
 const loginText = document.getElementById("loginText");
 
@@ -32,8 +32,8 @@ loginForm.addEventListener("submit", (e) => {
 
   var formData = new FormData(e.target);
 
-  var loginEmail = formData.get("logemail") || "";
-  var loginPass = formData.get("logpass") || "";
+  var loginEmail = formData.get("email") || "";
+  var loginPass = formData.get("senha") || "";
 
   if (loginEmail.length === 0) {
     // email está vazio
@@ -64,5 +64,3 @@ loginForm.addEventListener("submit", (e) => {
     loginPass,
   });
 });
-
-// sign up form data
