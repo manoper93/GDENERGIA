@@ -38,6 +38,8 @@ loginForm.addEventListener("submit", (e) => {
   if (loginEmail.length === 0) {
     // email está vazio
     logemail.style.border = "solid red 2px";
+
+    alert("Introduza o email por favor");
   } else {
     logemail.style.border = "unset";
   }
@@ -45,6 +47,8 @@ loginForm.addEventListener("submit", (e) => {
   if (loginPass.length === 0) {
     // password está vazia
     logpass.style.border = "solid red 2px";
+
+    alert("Introduza a password por favor");
   } else {
     logpass.style.border = "unset";
   }
