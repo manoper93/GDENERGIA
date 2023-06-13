@@ -1,6 +1,6 @@
 // Criação do botão
 var botao = document.createElement('button');
-botao.innerText = 'Texto do Botão';
+botao.innerText = 'Sobre Nós';
 
 // Estilização do botão
 botao.style.display = 'block'; // Define a exibição como 'block'
