@@ -53,15 +53,15 @@ loginForm.addEventListener("submit", (e) => {
     logpass.style.border = "unset";
   }
 
-  if (loginEmail.length > 0 && loginPass.length > 0) {
-    // TUDO OK - POSSO FAZER CHAMADA DA BASE DADOS
+  // if (loginEmail.length > 0 && loginPass.length > 0) {
+  //   // TUDO OK - POSSO FAZER CHAMADA DA BASE DADOS
 
-    // MUDA O TEXTO DO LOGIN
-    loginText.innerText = "Olá, " + loginEmail;
+  //   // MUDA O TEXTO DO LOGIN
+  //   loginText.innerText = "Olá, " + loginEmail;
 
-    // ESCONDE O LOGIN
-    showOrHideLogin();
-  }
+  //   // ESCONDE O LOGIN
+  //   showOrHideLogin();
+  // }
 
   console.log("LOG > FORM > values", {
     loginEmail,

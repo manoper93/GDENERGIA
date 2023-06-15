@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #15151500;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.containerboximage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  margin-top: 100px;
+}
+
+/* ======================== */
+.cardabc {
+  position: relative;
+  width: 550px; /* 350px */
+  /* height: 150px; 250px */
+  background-color: #0000001f;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.cardabc__image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  scale: 1.15;
+  transition: opacity 0.25s, scale 0.35s;
+}
+.cardabc:hover .cardabc__image {
+  opacity: 0.5;
+  scale: 1;
+}
+.cardabc__body {
+  position: absolute;
+  inset: 0;
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  justify-content: center;
+}
+.cardabc__body::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  opacity: 0;
+  scale: 1.25;
+  transition: opacity 0.25s, scale 0.25s;
+}
+.cardabc:hover .cardabc__body::before {
+  opacity: 1;
+  scale: 1;
+}
+.cardabc__title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+.cardabc__description {
+  font-size: 14px;
+  opacity: 0;
+  translate: -25px;
+  transition: opacity 0.25s, translate 0.25s;
+}
+.cardabc:hover .cardabc__description {
+  opacity: 1;
+  translate: 0;
+}
