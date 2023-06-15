@@ -38,6 +38,8 @@ loginForm.addEventListener("submit", (e) => {
   if (loginEmail.length === 0) {
     // email está vazio
     logemail.style.border = "solid red 2px";
+
+    alert("Introduza o email por favor");
   } else {
     logemail.style.border = "unset";
   }
@@ -45,19 +47,21 @@ loginForm.addEventListener("submit", (e) => {
   if (loginPass.length === 0) {
     // password está vazia
     logpass.style.border = "solid red 2px";
+
+    alert("Introduza a password por favor");
   } else {
     logpass.style.border = "unset";
   }
 
-  if (loginEmail.length > 0 && loginPass.length > 0) {
-    // TUDO OK - POSSO FAZER CHAMADA DA BASE DADOS
+  // if (loginEmail.length > 0 && loginPass.length > 0) {
+  //   // TUDO OK - POSSO FAZER CHAMADA DA BASE DADOS
 
-    // MUDA O TEXTO DO LOGIN
-    loginText.innerText = "Olá, " + loginEmail;
+  //   // MUDA O TEXTO DO LOGIN
+  //   loginText.innerText = "Olá, " + loginEmail;
 
-    // ESCONDE O LOGIN
-    showOrHideLogin();
-  }
+  //   // ESCONDE O LOGIN
+  //   showOrHideLogin();
+  // }
 
   console.log("LOG > FORM > values", {
     loginEmail,
