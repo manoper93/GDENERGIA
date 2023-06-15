@@ -8,6 +8,8 @@ body {
   color: #c4c3ca;
   background-color: #1f2029;
   overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
 }
 a {
   cursor: pointer;
@@ -255,6 +257,7 @@ h6 span {
   background-color: #ffeba7;
   color: #102770;
   box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+  width: 100%;
 }
 .btn-login:active,
 .btn-login:focus {
