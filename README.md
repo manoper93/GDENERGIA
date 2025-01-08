@@ -15,7 +15,7 @@ The goal of this project is to create a platform to simulate, monitor, and visua
 ## 🚀 **How to Access the Project?**
 The project is hosted on GitHub Pages and can be accessed via the following link:
 
-🔗 [GD Energia - Access here](https://manoper93.github.io/P21_GDENERGIA/)
+🔗 [GD Energia - Access here](https://manoper93.github.io/GDENERGIA/)
 
 ---
 
