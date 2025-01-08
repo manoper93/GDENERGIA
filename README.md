@@ -1,24 +1,11 @@
-# P21_GDENERGIA
+# Projeto GD Energia
 
-a) Os objetivos da sua aplicação?
+![GD Energia](https://via.placeholder.com/800x200?text=GD+Energia)  
+Projeto universitário para explorar conceitos de geração distribuída de energia, eficiência energética e sistemas de monitoramento. **Este projeto ainda está em desenvolvimento e não está completo.**
 
-O objetivo da aplicação é realizar toda a gestão energética consumida por cada cliente. Cada cliente terá toda a sua informação numa base de dados onde poderá essa ser consultada e alterada, sendo essa nome, morada, código de postal, número de telemóvel, número de contribuinte e dados de pagamento.
-No final o utilizador terá acesso ao consumo médio de energia.
+## 🚀 **Como acessar o projeto?**
+O projeto está hospedado no GitHub Pages e pode ser acessado pelo seguinte link:
 
-b) Os diferentes tipos de utilizadores da aplicação (mínimo 2 tipos)?
+🔗 [GD Energia - Acesse aqui](https://manoper93.github.io/P21_GDENERGIA/)
 
-Administrador:
-Utilizador:
-
-c) As funcionalidades que deverá disponibilizar aos vários utilizadores?
-
-Acessos:
-Administrador - Todas as funcionalidade do Utilizador mais alteração do preço energético.
-Utilizador - Consulta/alterar dados pessoais, alteração método de pagamento, consulta dos consumos energéticos, inserção de consumos energéticos.
-
-
-importar db:
- C:\xampp\mysql\bin\mysql -u root nome_do_banco_de_dados < caminho_para_arquivo.sql
-
-exportar db:
-C:\xampp\mysql\bin\mysqldump -u root nome_do_banco_de_dados > caminho_para_arquivo.sql
+---
