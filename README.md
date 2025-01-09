@@ -1,4 +1,4 @@
-# GD Energia Project
+# 🔥 GD Energia Project
 University project to explore concepts of distributed energy generation, energy efficiency, and monitoring systems. **This project is still under development and is incomplete.**
 
 ---
